@@ -139,7 +139,7 @@ void loop()
   
   gaugeSpr.pushSprite(0, 0, TFT_BLACK);
 
-  InstrumentBrightness = int(scaleValue(InstrumentBrightnessRatio, 0.2, 1, 0, 255));
+  InstrumentBrightness = int(scaleValue(InstrumentBrightnessRatio, 0.1, 1, 0, 255));
   // Set the instrument light brightness
   analogWrite(TFT_BL, InstrumentBrightness);
 

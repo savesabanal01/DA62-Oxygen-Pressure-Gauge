@@ -78,8 +78,8 @@ void setup()
   while (!Serial)
     ;
 
-delay(1000); // wait for serial monitor to open
-Serial.println("\r\nOxygen Gauge Start\n");
+  delay(1000); // wait for serial monitor to open
+  Serial.println("\r\nOxygen Gauge Start\n");
 
  /*
     needed for initialization.  Parameters are:
@@ -127,10 +127,9 @@ void loop()
   needleSpr.pushImage(0, 0, 28, 148, needle);
   needleSpr.setSwapBytes(false);
 
-  // Map the Oxygen PSI value to the degrees of rotation of the needle
   needleRotDegrees = map(OxygenPSIValue, 0, 4000, -140, 140);
+  // Map the Oxygen PSI value to the degrees of rotation of the needle
 
-  
   Serial.println(needleRotDegrees);
 
   needleSpr.setSwapBytes(false);
@@ -174,7 +173,7 @@ void loop()
   // get the value of the Oxygen PSI from the XPL Pro Plugin in X-Plane
   if (inData->handle == drefOxygenPSI)
     OxygenPSIValue = inData->inFloat;
-  
+
   if (inData->handle == drefInstrumentBrightness)
     if(inData->element == 1)
       InstrumentBrightnessRatio = inData->inFloat;
